@@ -2,6 +2,7 @@
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
+const laya = require('./laya')
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
@@ -10,7 +11,11 @@ function resolve(dir) {
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js'
+    laya: laya.entry,
+    app: [
+      './src/ui/layaUI.max.all.ts',
+      './src/main.ts'
+    ]
   },
   output: {
     path: config.build.assetsRoot,
@@ -30,12 +35,17 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [resolve('src'), resolve('bin')]
       },
       {
         test: /\.ts$/,
-        exclude: /node_modules/,
-        loader: 'tslint-loader'
+        loader: 'tslint-loader',
+        include: [resolve('src')]
+      },
+      {
+        test: /\.ts$/,
+        loader: 'ts-loader',
+        include: [resolve('src')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
