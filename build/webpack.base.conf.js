@@ -13,7 +13,7 @@ module.exports = {
   entry: {
     laya: laya.entry,
     app: [
-      './src/ui/layaUI.max.all.ts',
+      // './src/ui/layaUI.max.all.ts',
       './src/main.ts'
     ]
   },
