@@ -1,18 +1,18 @@
 {
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "typings/**/*"
   ],
   "exclude": [
     "node_modules"
   ],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
     "allowJs": true,
-    "module": "esnext",
+    "module": "commonjs",
     "target": "es5",
+    "noImplicitAny": false,
     "moduleResolution": "node",
-    // "isolatedModules": true,
     "lib": [
       "dom",
       "es5",
