@@ -1,5 +1,5 @@
 const { Handler, Sprite } = Laya
-// import ui from './ui/layaUI.max.all.ts';
+import ui from './ui/layaUI.max.all';
 
 // 程序入口
 class GameMain{
@@ -11,11 +11,11 @@ class GameMain{
   }
 
   init () {
-    // const demoPage = new ui.DemoPageUI()
-    // Laya.stage.addChild(demoPage)
+    const demoPage = new ui.DemoPageUI()
+    Laya.stage.addChild(demoPage)
     const sprite = new Laya.Sprite()
     sprite.loadImage('comp/bg.png')
-    Laya.stage.addChild(sprite)
+    demoPage.addChild(sprite)
   }
 }
 new GameMain();
