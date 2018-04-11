@@ -9,9 +9,6 @@ Layaair Webpack Typescript版本脚手架
 支持热更新
 
 ## 注意事项
-暂时需要手动在每次用Laya IDE导出资源后手动在src/ui/layaUI.max.all.ts文件最下方添加一行
-`
-export default ui
-`
+打包之前需要先跑一次开发 src/ui/layaUI.max.all.ts 的自动添加 export 只配了 dev 环境
 
-// todo 将导出ui功能提取出来
+// todo 优化 layaUI 自动添加 export
